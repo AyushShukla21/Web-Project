@@ -44,7 +44,7 @@ function handleInput(value) {
         currentInput = '';
     } 
     else if (value === '%') {
-        // convert currentInput to percentage of firstValue
+   
         if (firstValue && operator && currentInput) {
             currentInput = (parseFloat(firstValue) * parseFloat(currentInput) / 100).toString();
             display.innerText = currentInput;
@@ -85,13 +85,13 @@ function evaluateExpression(firstValue, operator, secondValue) {
     return result;
 }
 
-// 🌙 Toggle Dark Mode
+
 toggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark');
     toggleBtn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
 });
 
-// 📜 Make history entries clickable
+
 historyPanel.addEventListener('click', (e) => {
     if (e.target.tagName === 'DIV') {
         let resultValue = e.target.dataset.result;
@@ -99,3 +99,4 @@ historyPanel.addEventListener('click', (e) => {
         display.innerText = resultValue;
     }
 });
+
