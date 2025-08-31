@@ -1,0 +1,165 @@
+:root {
+  --bg-gradient: linear-gradient(135deg, #4b0082, #8a2be2);
+  --calc-bg: #f9f9f9;
+  --display-bg: #222;
+  --display-text: #0ff;
+  --btn-bg: #eee;
+  --btn-text: #333;
+  --btn-hover: #dcdcdc;
+  --operator-bg: #ffd700;
+  --equals-bg: #6a0dad;
+  --equals-text: #fff;
+  --history-bg: #f1f1f1;
+  --history-text: #444;
+}
+
+
+body.dark {
+  --bg-gradient: linear-gradient(135deg, #1a1a1a, #333);
+  --calc-bg: #222;
+  --display-bg: #111;
+  --display-text: #0f0;
+  --btn-bg: #333;
+  --btn-text: #eee;
+  --btn-hover: #555;
+  --operator-bg: #ff9800;
+  --equals-bg: #009688;
+  --equals-text: #fff;
+  --history-bg: #111;
+  --history-text: #aaa;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--bg-gradient);
+  font-family: Arial, sans-serif;
+  transition: background 0.4s;
+}
+
+.calculator {
+  background: var(--calc-bg);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+  width: 320px;
+  transition: background 0.4s;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  color: #6a0dad;
+  margin: 0;
+  font-size: 24px;
+}
+
+#toggleTheme {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+#toggleTheme:hover {
+  transform: scale(1.2);
+}
+
+/* Display */
+.display {
+  background: var(--display-bg);
+  color: var(--display-text);
+  font-size: 2rem;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 15px 0;
+  text-align: right;
+  overflow-x: auto;
+  transition: all 0.4s;
+}
+
+
+.history {
+  background: var(--history-bg);
+  color: var(--history-text);
+  font-size: 14px;
+  max-height: 100px;
+  overflow-y: auto;
+  text-align: right;
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-family: monospace;
+}
+.history div {
+  margin-bottom: 4px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.btn {
+  padding: 15px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 12px;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--btn-hover);
+  transform: scale(1.05);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.operator {
+  background: var(--operator-bg);
+  font-weight: bold;
+}
+
+.equals {
+  grid-row: span 2;
+  background: var(--equals-bg);
+  color: var(--equals-text);
+}
+
+.zero {
+  grid-column: span 2;
+}
+
+.history {
+  background: var(--history-bg);
+  color: var(--history-text);
+  font-size: 14px;
+  max-height: 100px;
+  overflow-y: auto;
+  text-align: right;
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-family: monospace;
+}
+.history div {
+  margin-bottom: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.history div:hover {
+  background: rgba(100, 100, 100, 0.2);
+  border-radius: 4px;
+}
